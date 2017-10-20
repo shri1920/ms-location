@@ -11,7 +11,7 @@ npm install git://github.com/shri1920/ms-location.git
 
 - Usage
 ````
-var MsLocation = Etcd = require("./ms-location"),
+var MsLocation = Etcd = require("ms-location"),
     msLocation = new MsLocation("127.0.0.1", "2379", "services");
 ````
 
