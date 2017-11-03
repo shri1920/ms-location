@@ -79,6 +79,12 @@ class Etcd {
                         reject({message: "Data not found for " + dirName, status: "error"});
                         return;
                     }
+                    try {
+                        respData.node.value = JSON.parse(respData.node.value);
+                    } catch (err) {
+                        reject({message: "Error fetching info for " + dirName, status: "error"});
+                        return;
+                    }
                     resolve({data: respData.node.value || {}, status: "success"});
                 });
             }).on("error", () => {
